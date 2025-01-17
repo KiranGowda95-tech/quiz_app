@@ -1,0 +1,23 @@
+{
+  "name": "quiz_app",
+  "version": "1.0.0",
+  "description": "This is the quiz application",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KiranGowda95-tech/quiz_app.git"
+  },
+  "author": "Kiran",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KiranGowda95-tech/quiz_app/issues"
+  },
+  "homepage": "https://github.com/KiranGowda95-tech/quiz_app#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  }
+}
