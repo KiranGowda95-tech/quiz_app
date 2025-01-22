@@ -1,27 +1,28 @@
 const express = require("express");
 const cors = require("cors");
-const userData = require("./db/users");
+//const userData = require("./db/users");
 //const quizzes=require("./db/quizzes")
 
 const quizRouter = require("./router/quiz.router");
-const loginRouter=require('./router/auth.router')
+const {loginRouter,signupRouter,authVerify}=require('./router/auth.router')
 
-const jwt = require("jsonwebtoken");
-const config = require("config");
+// const jwt = require("jsonwebtoken");
+// const config = require("config");
 //const crypto=require('crypto')
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 const PORT = 5000;
-//console.log(crypto.randomBytes(64).toString("hex"))
-app.use("/quiz", quizRouter);
-
-app.post("/auth/login", loginRouter);
 
 app.get("/", (req, res) => {
   res.send("user entered");
 });
+//console.log(crypto.randomBytes(64).toString("hex"))
+app.use("/quiz", quizRouter);
+
+app.use("/auth/login", loginRouter);
+app.use("/auth/signup",signupRouter);
 
 // app.get("/quiz",(req,res)=>{
 //     res.send(quizzes)
