@@ -5,7 +5,8 @@ const cors = require("cors");
 
 const quizRouter = require("./router/quiz.router");
 const {loginRouter,signupRouter}=require('./router/auth.router');
-const {authVerify} =require('./middleware/authVerify')
+const {authVerify} =require('./middleware/authVerify');
+const routeNotFound=require("./middleware/routeNotFound")
 
 // const jwt = require("jsonwebtoken");
 // const config = require("config");
@@ -21,9 +22,9 @@ app.get("/", (req, res) => {
 });
 //console.log(crypto.randomBytes(64).toString("hex"))
 app.use("/quiz", quizRouter);
-
 app.use("/auth/login", loginRouter);
 app.use("/auth/signup",signupRouter);
+app.use(routeNotFound);
 
 // app.get("/quiz",(req,res)=>{
 //     res.send(quizzes)
