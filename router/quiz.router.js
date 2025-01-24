@@ -1,12 +1,12 @@
-const express=require("express")
-const {authVerify}=require('../controllers/authControllers')
+const express = require("express");
+const authVerify = require("../middleware/authVerify");
 
-const quizRouter=express.Router()
-const quizzess=require("../db/quizzes")
+const quizRouter = express.Router();
+const quizzess = require("../db/quizzes");
 
-quizRouter.route('/').get(authVerify,(req,res)=>{
-    res.json(quizzess)
-    //res.send(quizzess.data)
-})
+quizRouter.route("/").get(authVerify, (req, res) => {
+  res.json(quizzess);
+  //res.send(quizzess.data)
+});
 
-module.exports=quizRouter
+module.exports = quizRouter;

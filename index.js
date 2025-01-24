@@ -4,7 +4,8 @@ const cors = require("cors");
 //const quizzes=require("./db/quizzes")
 
 const quizRouter = require("./router/quiz.router");
-const {loginRouter,signupRouter,authVerify}=require('./router/auth.router')
+const {loginRouter,signupRouter}=require('./router/auth.router');
+const {authVerify} =require('./middleware/authVerify')
 
 // const jwt = require("jsonwebtoken");
 // const config = require("config");
